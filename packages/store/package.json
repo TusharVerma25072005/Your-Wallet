@@ -1,0 +1,19 @@
+{
+  "name": "@repo/store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    "./balance": "./src/balanceAtom.ts",
+    "./transaction": "./src/transactionsAtom.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jotai": "^2.12.4"
+  }
+}

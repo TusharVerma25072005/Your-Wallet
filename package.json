@@ -1,5 +1,5 @@
 {
-  "name": "YourWallet",
+  "name": "your-wallet",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -20,5 +20,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "jotai": "^2.12.4"
+  }
 }

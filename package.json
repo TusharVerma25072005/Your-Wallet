@@ -3,6 +3,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:user": "turbo run build --filter=user-app",
+    "build:merchant": "turbo run build --filter=merchant-app",
+    "build:webhook": "turbo run build --filter=bank-webhook",
+    "vercel-build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

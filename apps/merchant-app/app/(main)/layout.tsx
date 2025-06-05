@@ -25,10 +25,10 @@ export default async function RootLayout({
           <TopBar />
         </div>
         <div className="grid grid-cols-4 h-[calc(100vh-4rem)]">
-          <div className="col-span-1 overflow-y-auto border-r-2 border-gray-200">
+          <div className="hidden md:block col-span-1 overflow-y-auto border-r-2 border-gray-200">
             <Sidenav />
           </div>
-          <div className="col-span-3 overflow-y-auto bg-gray-100">
+          <div className=" col-span-4 md:col-span-3 overflow-y-auto bg-gray-100">
             <Provider>
 
               <ClientProviders token={token} >

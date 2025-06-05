@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Button } from "@repo/ui/button"
 import { signIn } from "next-auth/react"
 import { signUp } from "../../lib/signUp"
-
+import { Logo } from "@repo/ui/logo2"
 
 export const SignUpBox = ({setShowLogin} : {setShowLogin : React.Dispatch<React.SetStateAction<boolean>>}) => {
     const [email, setEmail] = useState<string>("");
@@ -46,6 +46,9 @@ export const SignUpBox = ({setShowLogin} : {setShowLogin : React.Dispatch<React.
 
     return (
         <div className="col-span-1 flex flex-col items-center justify-center">
+            <div className="md:hidden my-4">    
+                            <Logo />
+                        </div>
             <div className="flex flex-col items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                     <input className="border outline-none px-2 py-1 m-2 rounded" type="text" placeholder="Enter name" onChange={

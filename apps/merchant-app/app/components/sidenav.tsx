@@ -1,7 +1,7 @@
 import Link from 'next/link';
 export const Sidenav = () => {
     return (
-        <div>
+        <div >
             <nav >
                 <ul className="flex flex-col gap-4 p-4 font-semibold">
                     <li className="border-b-2 border-white hover:border-gray-100 transition-colors">

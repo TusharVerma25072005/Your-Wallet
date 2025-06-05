@@ -3,6 +3,7 @@ import { useState , useEffect } from "react"
 import { Button } from "@repo/ui/button"
 import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation"
+import { Logo } from "@repo/ui/logo2"
 
 export const LoginBox = ( {setShowLogin} : {setShowLogin : React.Dispatch<React.SetStateAction<boolean>>}) => {
     const [inp , setInp] = useState<string>("")
@@ -38,6 +39,9 @@ export const LoginBox = ( {setShowLogin} : {setShowLogin : React.Dispatch<React.
 
     return (
         <div className="col-span-1 flex flex-col items-center justify-center">
+            <div className="md:hidden my-4">    
+                <Logo />
+            </div>
             <div className="flex flex-col items-center justify-center">
                 <input className = "border outline-none px-2 py-1 my-1 mx-2 rounded" type="text" placeholder="Enter mobile no , username or email" onChange={
                     ()=> {

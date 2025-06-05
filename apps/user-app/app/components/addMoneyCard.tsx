@@ -48,7 +48,7 @@ export const AddMoneyCard = () => {
     };
     
     return (
-        <div className="flex flex-col justify-between items-center w-1/2 bg-white rounded-lg p-6 m-3 shadow-lg">
+        <div className="flex flex-col justify-between items-center w-8/9 md:w-1/2 bg-white rounded-lg p-6 m-3 shadow-lg">
             <h2 className="font-bold text-3xl text-blue-700 mb-6">Add Money</h2>
             
             {error && (

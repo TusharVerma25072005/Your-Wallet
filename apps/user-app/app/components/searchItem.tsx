@@ -12,7 +12,9 @@ interface SearchItemProps {
 
 export const SearchItem = ( props : SearchItemProps ) => {
     return (
-        <div className="flex justify-between w-full bg-white rounded-lg p-5 m-3">
+        <div className="flex justify-between w-8/9 md:w-full bg-white rounded-lg p-5 m-3">
+            
+            
             <div className="flex flex-col justify-center items-start ">
 
             <span className="text-3xl font-bold ">

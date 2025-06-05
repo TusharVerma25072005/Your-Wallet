@@ -19,7 +19,7 @@ export const TransactionCard = (transaction: transactionCardProps) => {
                     </div>
                 </div>
                 <div className="flex flex-col items-end">
-                    <p className={`text-lg font-semibold ${transaction.status === 'COMPLETED' ? 'text-green-500' : 'text-red-500'}`}>
+                    <p className={`text-md  md:text-lg font-semibold ${transaction.status === 'COMPLETED' ? 'text-green-500' : 'text-red-500'}`}>
                         {transaction.status}
                     </p>
                     <p className="text-sm text-gray-500">{transaction.amount.toFixed(2)}</p>

@@ -59,7 +59,7 @@ export const LoginBox = ({ setShowLogin }: LoginBoxProps) => {
                 handleSignIn();
             }}>Log In</Button>
             <p className="text-sm text-gray-500 mt-4">
-                Don't have an account? <span className="text-blue-500 cursor-pointer" onClick={() => setShowLogin && setShowLogin(false)}>Sign Up</span>
+                Dont have an account? <span className="text-blue-500 cursor-pointer" onClick={() => setShowLogin && setShowLogin(false)}>Sign Up</span>
             </p>
         </div>
 

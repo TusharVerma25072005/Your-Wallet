@@ -14,14 +14,12 @@ export const Withdraw = async ({Bank , Amount, AccountNumber} : { Bank : string 
 
         }
         const amountNumber = parseFloat(Amount);
-        const accountNumber = parseInt(AccountNumber, 10);
         const bank = Bank.trim();
         if (isNaN(amountNumber) || amountNumber <= 0) {
             throw new Error("Invalid amount");
         }
         const bal = await db.merchant.findUnique({
             where: {
-                // @ts-ignore
                 id: session.user.id,
             },
             select: {
@@ -34,11 +32,11 @@ export const Withdraw = async ({Bank , Amount, AccountNumber} : { Bank : string 
         console.log("bank", bank);
         console.log("new balance", bal.balance - amountNumber);
         await db.$transaction(async (tx) => {      
-            const transaction = await tx.transaction.create({
+            await tx.transaction.create({
                 data: {
                     status : "COMPLETED WITHDRAW",
                     amount: -amountNumber,
-                    //@ts-ignore
+                    
                     merchantId: session.user?.id,
                     userId: bank, 
                     
@@ -46,7 +44,6 @@ export const Withdraw = async ({Bank , Amount, AccountNumber} : { Bank : string 
             });
             await tx.merchant.update({
                 where: {
-                    // @ts-ignore
                     id: session.user?.id,
                 },                data: {
                     balance: {

@@ -1,5 +1,5 @@
 import express, { Express} from 'express';
-import db from '@repo/db'
+import db from '@repo/db/client'
 
 
 const app: Express = express();

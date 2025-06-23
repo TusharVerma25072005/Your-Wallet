@@ -1,3 +1,6 @@
+import type { Session, User } from "next-auth"
+import type { JWT } from "next-auth/jwt";
+
 import { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import db from "@repo/db/client"
@@ -40,12 +43,12 @@ export const authOptions:NextAuthOptions = {
 
                     if (user.password === password) {
                         return {
-                            id: user.id,
-                            name: user.name,
-                            email: user.email,
-                            phone: user.phone,
-                            payId: user.payId,
-                            createdAt: user.createdAt
+                            id: user.id || '',
+                            name: user.name || '',
+                            email: user.email || '',
+                            phone: user.phone || '',
+                            payId: user.payId || '',
+                            createdAt: user.createdAt ? user.createdAt.toISOString() : ''
                         };
                     }
 
@@ -61,7 +64,8 @@ export const authOptions:NextAuthOptions = {
     session: {
         strategy: "jwt",
     },
-    callbacks: {        async jwt({ token, user }:any) {
+    callbacks: {        
+        async jwt({ token, user } :{ token: JWT; user?: User }) {
             if (user) {
                 token.id = user.id;
                 token.name = user.name;
@@ -75,7 +79,7 @@ export const authOptions:NextAuthOptions = {
                 );
             }
             return token;
-        },        async session({ session, token } : any) {
+        },        async session({ session, token } : { session: Session; token: JWT }) {
             if (token) {
                 session.user.id = token.id as string;
                 session.user.name = token.name as string;

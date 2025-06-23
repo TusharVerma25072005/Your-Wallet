@@ -10,24 +10,18 @@ export const ProfileBox = async () => {
                     Personal Info
                 </span>
                 <span className="text-lg my-1">
-                    {/* @ts-ignore */}
                     Name : {session?.user?.name}
                 </span>
                 <span className="text-lg my-1">
-                    {/* @ts-ignore */}
                     Ph. No : {session?.user?.phone}
                 </span>
                 <span className="text-lg my-1">
-                    {/* @ts-ignore */}
                     PayID : {session?.user?.payId}
-
                 </span>
                 <span className="text-lg my-1">
-                    {/* @ts-ignore */}
                     Email : {session?.user?.email}
                 </span>
                 <span className="text-lg my-1">
-                    {/* @ts-ignore */}
                     Date Created : {session?.user?.createdAt?.toString().slice(0, 10)}
                 </span>
             </div>

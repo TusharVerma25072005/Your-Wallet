@@ -15,7 +15,6 @@ export default async function RootLayout({
   if (!session) {
     redirect("/register");
   }
-  // @ts-ignore
   const token = session.user?.accessToken;
 
   return (

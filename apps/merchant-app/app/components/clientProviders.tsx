@@ -8,7 +8,7 @@ export function ClientProviders({
   token,
 }: Readonly<{
   children: React.ReactNode;
-  token: string;
+  token: string | null | undefined;
 }>) {
   return (
     <>

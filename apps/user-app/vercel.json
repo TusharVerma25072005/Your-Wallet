@@ -1,7 +1,0 @@
-{
-  "framework": "nextjs",
-  "buildCommand": "cd ../.. && npx turbo run build --filter=user-app",
-  "outputDirectory": ".next",
-  "installCommand": "cd ../.. && npm install",
-  "devCommand": "cd ../.. && npx turbo run dev --filter=user-app"
-}

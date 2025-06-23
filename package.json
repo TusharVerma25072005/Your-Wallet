@@ -6,6 +6,7 @@
     "build:user": "turbo run build --filter=user-app",
     "build:merchant": "turbo run build --filter=merchant-app",
     "build:webhook": "turbo run build --filter=bank-webhook",
+    "start": "concurrently \"npm:start --workspace=apps/user-app\" \"npm:start --workspace=apps/merchant-app\" \"npm:start --workspace=apps/bank-webhook\"",
     "vercel-build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -13,6 +14,8 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
+    "esbuild": "^0.25.5",
     "prettier": "^3.5.3",
     "turbo": "^2.5.3",
     "typescript": "5.8.2"
